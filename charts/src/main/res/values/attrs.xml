@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <declare-styleable name="PieChart">
+        <attr name="border_color" format="color"/>
+        <attr name="animation_distance" format="dimension"/>
+        <attr name="outer_border_width" format="dimension"/>
+        <attr name="text_size" format="dimension"/>
+        <attr name="text_color" format="color"/>
+        <attr name="text_in_percent" format="boolean"/>
+        <attr name="text_position" format="fraction"/>
+    </declare-styleable>
+    <declare-styleable name="PointersContainerView">
+        <attr name="image" format="reference"/>
+        <attr name="minimum_scale" format="float"/>
+        <attr name="maximum_scale" format="float"/>
+    </declare-styleable>
+</resources>

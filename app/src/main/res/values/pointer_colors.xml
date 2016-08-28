@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="p1">#e1f5fe</color>
+    <color name="p2">#b3e5fc</color>
+    <color name="p3">#81d4fa</color>
+    <color name="p4">#4fc3f7</color>
+    <color name="p5">#29b6f6</color>
+    <color name="p6">#03a9f4</color>
+    <color name="p7">#039be5</color>
+    <color name="p8">#0288d1</color>
+    <color name="p9">#0277bd</color>
+    <color name="p10">#01579b</color>
+</resources>
