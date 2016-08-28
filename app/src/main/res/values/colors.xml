@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#3d3d3d</color>
+    <color name="colorPrimaryDark">#000000</color>
+    <color name="colorAccent">#ffcc00</color>
+    <color name="textColor">#3c3c3c</color>
+    <color name="border">#40000000</color>
+
+    <color name="menu_pie_chart">#ffb700</color>
+    <color name="menu_pointers">#00b7ff</color>
+    <color name="menu_color3">#a7e800</color>
+    <color name="menu_color4">#b700ff</color>
+
+</resources>

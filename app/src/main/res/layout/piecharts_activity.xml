@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/background"
+    android:orientation="vertical"
+    android:weightSum="1"
+    >
+    <TextView
+        android:id="@+id/title"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="0.1"
+        android:text="@string/piechart_example_title"
+        android:textStyle="bold"
+        android:gravity="center"
+        android:layout_margin="4dp"
+        android:textSize="20dp"
+        />
+    <com.dgonzalez.charts.piechart.PieChart
+        android:id="@+id/piechart"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="0.5"
+        app:animation_distance="20dp"
+        app:border_color="@color/piechart_border"
+        app:outer_border_width="4dp"
+        app:text_color="@color/piechart_text"
+        app:text_position="70%"
+        app:text_size="18dp"
+        app:text_in_percent="true"
+        />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="0.05"
+        android:orientation="horizontal"
+        android:padding="4dp"
+        >
+        <TextView
+            android:id="@+id/name"
+            android:layout_width="0dp"
+            android:layout_weight="0.5"
+            android:layout_height="wrap_content"
+            tools:text="Name : Country name"
+            android:gravity="center"
+            android:textStyle="bold"
+            android:textSize="18dp"
+            android:maxLines="1"
+            />
+        <TextView
+            android:id="@+id/value"
+            android:layout_width="0dp"
+            android:layout_weight="0.5"
+            android:layout_height="wrap_content"
+            tools:text="Value : 455Mt"
+            android:gravity="center"
+            android:textStyle="bold"
+            android:textSize="18dp"
+            android:maxLines="1"
+            />
+    </LinearLayout>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="0.45"
+        >
+        <fragment
+            android:id="@+id/piechart_description"
+            android:name="com.dgonzalez.charts.sample.piecharts.SettingsFragment"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            />
+    </ScrollView>
+
+
+</LinearLayout>
