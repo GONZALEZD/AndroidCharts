@@ -13,5 +13,16 @@
         <attr name="image" format="reference"/>
         <attr name="minimum_scale" format="float"/>
         <attr name="maximum_scale" format="float"/>
+        <attr name="pointers_default_color" format="color"/>
+        <attr name="pointers_default_symbol_color" format="color"/>
+        <attr name="pointers_default_background_color" format="color"/>
+        <attr name="pointers_default_stroke_width" format="dimension"/>
+    </declare-styleable>
+    <declare-styleable name="PointerView">
+        <attr name="line_color" format="color"/>
+        <attr name="symbol_color" format="color"/>
+        <attr name="background_color" format="color"/>
+        <attr name="stroke_width" format="dimension"/>
+        <attr name="end_point_size" format="dimension"/>
     </declare-styleable>
 </resources>

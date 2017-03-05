@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <item name="pointers_default_stroke_width" format="dimension" type="dimen">3.5dp</item>
+    <color name="pointers_default_background_color">#F5F5F5</color>
+    <dimen name="pointers_default_end_point_size">40dp</dimen>
+</resources>

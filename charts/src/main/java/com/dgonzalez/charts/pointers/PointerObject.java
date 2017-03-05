@@ -39,4 +39,10 @@ public class PointerObject {
     public Character getEndOfPointer() {
         return endOfPointer;
     }
+
+    public PointerObject clone(){
+        PointerObject clone = new PointerObject(new Point(start), new Point(end));
+        clone.setEndPointer(getEndOfPointer());
+        return clone;
+    }
 }

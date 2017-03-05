@@ -2,10 +2,8 @@ package com.dgonzalez.charts.piechart;
 
 import android.annotation.TargetApi;
 import android.content.Context;
-import android.content.res.TypedArray;
 import android.graphics.Bitmap;
 import android.graphics.Canvas;
-import android.graphics.Color;
 import android.graphics.Paint;
 import android.graphics.Path;
 import android.graphics.PathMeasure;
@@ -22,9 +20,6 @@ import android.widget.FrameLayout;
 
 import java.util.ArrayList;
 import java.util.List;
-import java.util.StringTokenizer;
-
-import fr.dgonzalez.charts.R;
 
 /**
  * @author david.gonzalez (gonzalez.david31@gmail.com)

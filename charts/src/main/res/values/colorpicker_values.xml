@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="color_picker_size">250dp</dimen>
+    <dimen name="color_picker_container_size">280dp</dimen>
+    <string name="dialog_cancel_text">Cancel</string>
+    <string name="dialog_choose_text">Choose</string>
+    <string name="dialog_title">Color picker</string>
+    <integer name="dialog_change_color_anim_duration_ms">400</integer>
+    <dimen name="dialog_btn_margin">8dp</dimen>
+    <color name="dialog_background">#F0F0F0</color>
+</resources>

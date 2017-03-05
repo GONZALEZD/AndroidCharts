@@ -1,14 +1,16 @@
 package com.dgonzalez.charts.sample.pointers;
 
-import android.graphics.Color;
 import android.graphics.Paint;
 import android.graphics.Point;
 import android.graphics.Typeface;
 import android.support.v4.content.ContextCompat;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.view.GestureDetector;
+import android.view.MotionEvent;
 import android.widget.ListView;
 
+import com.dgonzalez.charts.pointers.MutablePointerRenderer;
 import com.dgonzalez.charts.pointers.PointerAdapter;
 import com.dgonzalez.charts.pointers.PointersContainerView;
 import com.dgonzalez.charts.pointers.PointerObject;
@@ -24,14 +26,14 @@ public class PointersSampleActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.pointers_activity);
 
-        PointersContainerView container = (PointersContainerView) findViewById(R.id.markersContainer);
+        final PointersContainerView container = (PointersContainerView) findViewById(R.id.markersContainer);
 
         Paint defaultPaint = new Paint();
         defaultPaint.setStrokeWidth(4);
         defaultPaint.setAntiAlias(true);
         defaultPaint.setTypeface(Typeface.DEFAULT_BOLD);
         defaultPaint.setColor(getResources().getColor(R.color.colorPrimary));
-        PointerAdapter<PointerObject> adapter = new PointerAdapter(this, defaultPaint);
+        PointerAdapter<PointerObject> adapter = new PointerAdapter(this);
         LegendAdapter legendAdapter = new LegendAdapter(this);
 
         Paint paint;
@@ -61,10 +63,12 @@ public class PointersSampleActivity extends AppCompatActivity {
             PointerObject marker = data.get(key);
             char c = (char) ((int)('A') + i);
             marker.setEndPointer(new Character(c));
-
+            MutablePointerRenderer renderer = new MutablePointerRenderer(container.getDefaultRenderer());
             paint = new Paint(defaultPaint);
             paint.setColor(ContextCompat.getColor(this, colors[i]));
-            adapter.addItem(marker, paint);
+            renderer.setLineColorAndStroke(paint);
+            renderer.setSymbolColor(paint.getColor());
+            adapter.addItem(marker, renderer);
             legendAdapter.add(key,c,paint);
             i++;
         }
@@ -73,5 +77,34 @@ public class PointersSampleActivity extends AppCompatActivity {
 
         ListView legend = (ListView) findViewById(R.id.legendList);
         legend.setAdapter(legendAdapter);
+
+        container.fitImageToView();
+        container.setOnDoubleTapListener(new GestureDetector.OnDoubleTapListener() {
+
+            @Override
+            public boolean onSingleTapConfirmed(MotionEvent e) {
+                return false;
+            }
+
+            @Override
+            public boolean onDoubleTap(MotionEvent e) {
+                float mid = (container.getMaximumScale() - container.getMinimumScale())*0.5f + container.getMinimumScale();
+                boolean isZoomed= container.getZoom()>mid? true : false;
+                if(isZoomed){
+                    // unzoom
+                    container.zoom(container.getMinimumScale(), e.getX(), e.getY());
+                }
+                else {
+                    // zoom
+                    container.zoom(container.getMaximumScale(), e.getX(), e.getY());
+                }
+                return true;
+            }
+
+            @Override
+            public boolean onDoubleTapEvent(MotionEvent e) {
+                return false;
+            }
+        });
     }
 }

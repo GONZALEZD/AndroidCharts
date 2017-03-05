@@ -1,5 +1,5 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="fr.dgonzalez.charts">
+    package="com.dgonzalez.charts">
 
     <application
         android:allowBackup="true"

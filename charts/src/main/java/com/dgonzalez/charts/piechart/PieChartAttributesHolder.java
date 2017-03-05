@@ -5,7 +5,7 @@ import android.content.res.TypedArray;
 import android.graphics.Color;
 import android.util.AttributeSet;
 
-import fr.dgonzalez.charts.R;
+import com.dgonzalez.charts.R;
 
 /**
  * @author david.gonzalez (gonzalez.david31@gmail.com)

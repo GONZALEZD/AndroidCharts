@@ -2,6 +2,7 @@ package com.dgonzalez.charts.sample.pointers;
 
 import android.content.Context;
 import android.graphics.Bitmap;
+import android.graphics.Color;
 import android.graphics.Paint;
 import android.view.View;
 import android.view.ViewGroup;
@@ -30,7 +31,9 @@ public class LegendAdapter extends ArrayAdapter<String> {
         icons.add(getCount()-1, PointerUtilities.createEndPointer(
                 paint,
                 PointerUtilities.DEFAULT_POINTER_END_SIZE,
-                symbol));
+                symbol,
+                Color.WHITE,
+                paint.getColor()));
     }
 
     @Override
